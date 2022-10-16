@@ -1,0 +1,778 @@
+
+@font-face {
+	font-family: 'NotoSans-Light';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../fonts/NotoSans-Light.ttf');
+	src: local('Noto Sans'), local('NotoSans'),
+	url('../fonts/NotoSans-Light.woff2') format('woff2'),
+	url('../fonts/NotoSans-Light.woff') format('woff'),
+	url('../fonts/NotoSans-Light.ttf') format('truetype');
+}
+
+body {
+	font-family: 'NotoSans-Light',  'Noto Sans', 'NotoSans', Arial, sans-serif;
+}
+
+/*  VIP colors */
+
+.modal-backdrop {
+	background-color: #000000 !important;
+}
+
+.symc2 div, .symc2 span,.symc2  iframe,
+.symc2 h1,.symc2  h2,.symc2  h3,.symc2  h4,.symc2  h5,.symc2  h6,.symc2  p, .symc2  blockquote, .symc2  pre, .symc2
+a, .symc2  abbr, .symc2  acronym, .symc2  address, .symc2  big, .symc2  cite, .symc2  code, .symc2
+del, .symc2  dfn, .symc2  em, .symc2  img, .symc2  ins, .symc2  kbd, .symc2  q, .symc2  s, .symc2  samp, .symc2
+small, .symc2  strike, .symc2  strong, .symc2  sub, .symc2  sup, .symc2  tt, .symc2  var, .symc2
+b, .symc2  u, .symc2  i, .symc2  center, .symc2
+dl, .symc2  dt, .symc2  dd, .symc2  ol, .symc2  ul, .symc2  li, .symc2
+fieldset, .symc2  form, .symc2  label, .symc2  legend{
+	margin: 0;
+	padding: 0;
+	border: 0;
+
+	font-size: 15px;
+	vertical-align: baseline;
+}
+
+.symc2 *{
+	font-size: 12px;
+	color: #000000;
+	text-align: left;
+}
+
+.symc2 p{
+	margin-top:12px;
+	margin-bottom:12px;
+}
+
+.symc2 strong{
+	font-weight:bold;
+}
+
+.symc2 a{
+	color:#366bb2;
+}
+
+.symc2 ol{
+	margin-left:25px;
+}
+
+.symc2 {
+	background: #ffffff; /* Old browsers */
+
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dddddd', endColorstr='#aaaaaa',GradientType=0 ); /* IE6-9 */
+
+	border: 1px solid #999;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	*border: 1px solid #999;
+	border-top-color:  white;
+	border-bottom-color:  #aaa;
+	-webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+.symc2 #vipDialogTop a#vipCancelOTP {
+	text-decoration: none;
+	color: #000;
+}
+
+.symc2 #vipDialogContent {
+	background: #ffffff; /* Old browsers */
+	min-height: 440px; /* room left over for powered-by */
+}
+
+.symc2 #vipDialogTitle {
+	font-size: 16px;
+	font-weight:bold;
+	text-align: center;
+}
+
+.symc2 #vipRememberDeviceDiv.n-vipcheckbox input[type=checkbox] {
+	visibility: hidden;
+}
+
+.symc2 #vipRememberDeviceDiv.n-vipcheckbox {
+	margin: 0px 0px 0px 5px;
+	position: relative;
+}
+
+::-webkit-input-placeholder { /* Chrome */
+	color: #C8C8C8;
+	letter-spacing:1px;
+	font-size: 20px;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+	color: #C8C8C8 !important;
+	letter-spacing: 0px !important;
+	font-size: 20px !important;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+	color: #C8C8C8;
+	opacity: 1;
+	letter-spacing:1px;
+	font-size: 20px;
+}
+
+:-moz-placeholder { /* Firefox 4 - 18 */
+	color: #C8C8C8;
+	opacity: 1;
+	letter-spacing:1px;
+	font-size: 20px;
+}
+
+/* custom checkbox */
+.symc2 #vipRememberDeviceDiv.n-vipcheckbox label {
+	cursor: pointer;
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	top: -18px;
+	left: -5px;
+	background: #fff;
+	border:1px solid #808080;
+	border-radius: 2px;
+}
+
+/* check mark in white*/
+.symc2 #vipRememberDeviceDiv.n-vipcheckbox label:after {
+	opacity: 0.1;
+	content: '';
+	position: absolute;
+	width: 7px;
+	height: 3px;
+	top: 4px;
+	left: 3px;
+	border: 2px solid #fff;
+	border-top: none;
+	border-right: none;
+	transform: rotate(-45deg);
+}
+
+/*  background color after checked */
+.symc2 #vipRememberDeviceDiv.n-vipcheckbox input:checked ~ label {
+	background: #366bb2;
+}
+
+.symc2 #vipRememberDeviceDiv.n-vipcheckbox label:hover::after {
+	opacity: 0.5;
+}
+
+.symc2 #vipRememberDeviceDiv.n-vipcheckbox input[type=checkbox]:checked + label:after {
+	opacity: 1;
+}
+
+.symc2 #n-line {
+	width: 100%;
+	height: 1px;
+	background-color: #cccccc;
+	position: absolute;
+	left:  0%;
+	right: 0%;
+	margin-top: 20px;
+}
+
+.symc2 #vipDialogContent .n-btn {
+	background-color: #ffffff;
+	border: none;
+	color: white;
+	padding: 10px 25px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	cursor: pointer;
+	border-radius: 25px;
+	width: 150px;
+	height: 50px;
+}
+
+.symc2 #vipDialogContent .n-btnwhite {
+	background-color: #ffffff;
+	color: #366bb2;
+	float:left;
+	border: solid 1px #366bb2;
+	width: 48%;
+}
+
+.symc2 #vipDialogContent .n-btnblue {
+	background-color: #366bb2;
+	color: white;
+	position: relative;
+	width: 48%;
+	float:right;
+}
+
+.symc2 #vipDialogContent .n-btnblue-remember,
+.symc2 #vipDialogContent .n-btnblue-full {
+	background-color: #008CBA;
+	color: white;
+	position: relative;
+	left: 9px;
+	margin-left: -10px;
+	width: 100%;
+}
+
+.symc2 .buttonsMargin {
+	margin-top: 10px;
+	margin-bottom: 45px;
+
+}
+
+.symc2 .oobbuttonsMargin {
+	padding-top: 20px;
+	padding-bottom: 25px;
+}
+
+.symc2 #vipSelectOob {
+	font-size: 17px;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+.symc2 #vipDialogContent .btn {
+	color: #000;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	font-weight: bold;
+
+	background: #C4C4C4; /* Old browsers */
+	background: -moz-linear-gradient(top, #ddd 0%, #C4C4C4 46%, #ddd 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ddd), color-stop(46%,#C4C4C4), color-stop(100%,#ddd)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #ddd 0%,#C4C4C4 46%,#ddd 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #ddd 0%,#C4C4C4 46%,#ddd 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #ddd 0%,#C4C4C4 46%,#ddd 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #ddd 0%,#C4C4C4 46%,#ddd 100%); /* W3C */
+	-ms-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ddd', endColorstr='#C4C4C4',GradientType=0 ); /* IE6-9 */
+
+	border: 1px solid #aaa;
+
+	*zoom: 1;
+	-webkit-box-shadow: 1.5px 1.5px 1px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 1.5px 1.5px 1px rgba(0, 0, 0, 0.15);
+	box-shadow: 1.5px 1.5px 1px rgba(0, 0, 0, 0.15);
+}
+
+.symc2 #vipDialogContent .btn.primary{
+	color: #000;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	font-weight:bold;
+
+
+	background: #ffc43f; /* Old browsers */
+	background: -moz-linear-gradient(top, #fff9cc 0%, #ffc43f 46%, #ffefaf 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff9cc), color-stop(46%,#ffc43f), color-stop(100%,#ffefaf)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #fff9cc 0%,#ffc43f 46%,#ffefaf 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #fff9cc 0%,#ffc43f 46%,#ffefaf 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #fff9cc 0%,#ffc43f 46%,#ffefaf 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #fff9cc 0%,#ffc43f 46%,#ffefaf 100%); /* W3C */
+	-ms-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff9cc', endColorstr='#ffefaf',GradientType=0 ); /* IE6-9 */
+
+	border: 1px solid #cc9200;
+
+	*zoom: 1;
+	-webkit-box-shadow: 1.5px 1.5px 1px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 1.5px 1.5px 1px rgba(0, 0, 0, 0.15);
+	box-shadow: 1.5px 1.5px 1px rgba(0, 0, 0, 0.15);
+}
+
+
+/*  VIP layout */
+
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1040;
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+
+.symc2 {
+	position: fixed;
+	top: 40%;
+	left: 50%;
+	z-index: 1050;
+	width: 400px;
+
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	outline: none;
+
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+.symc2 .vipSymcLogo {
+	background: url(../images/symantec-logo.png) no-repeat center;
+	display: block;
+}
+
+.symc2 #vipDialogTop {
+	margin-top: 19px;
+}
+
+.symc2 #vipDialogTop #vipCloseTop {
+	background-repeat: no-repeat;
+	background-position: center;
+	background: url(../images/close-icon.png) no-repeat 95%;
+	height: 30px;
+}
+
+.symc2 #vipDialogIdentityText {
+	padding-top: 23px;
+	text-align: center;
+	padding-bottom: 0px;
+	padding-bottom: 15px;
+}
+
+.symc2 #vipDialogMobilePushText {
+	padding-top: 12px;
+	text-align: center;
+	padding-bottom: 0px;
+	padding-bottom: 15px;
+}
+
+.symc2 #vipDialogIdentityText span {
+	font-size: 30px;
+}
+
+.symc2 #vipDialogRememberTitleText {
+	padding-top: 19px;
+	text-align: center;
+	padding-bottom: 19px;
+
+}
+
+.symc2 #vipDialogRememberTitleText span {
+	font-size: 30px;
+}
+
+.symc2 #vipDialogTitleText {
+	font-size: 30px;
+	text-align: center;
+	padding-top: 12px;
+	padding-bottom: 15px;
+}
+
+.symc2 #vipDialogContent #vipContent p {
+	font-size: 15px;
+}
+
+.symc2 #vipDialogContent #vipContent .remembernote {
+	font-size: 15px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	letter-spacing: normal;
+	text-align: left;
+	position: relative;
+	left: 20px;
+	top: 5px;
+	padding-right: 10%;
+}
+
+.symc2 #vipDialogContent #vipContent .protectionnote {
+	font-size: 15px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	letter-spacing: normal;
+	text-align: center;
+	position: relative;
+}
+
+.symc2 .centerText {
+	display: -webkit-flexbox;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	justify-content: center;
+}
+
+.symc2 #vipDialogTop #vipCancelOTP {
+
+}
+
+#vipMessageBox.error, #vipMessageBox.success {
+	padding-top: 22px;
+	padding-left: 40px;
+	padding-bottom: 10px;
+}
+
+.symc2 #vipMessageBox.error #vipMessageIcon{
+	background: url(../images/error-icon-medium.png) no-repeat;
+	width:auto;
+	float:left;
+}
+
+.symc2 #vipMessageBox.success #vipMessageIcon{
+	background: url(../images/success_icon2x.png) no-repeat;
+	width:auto;
+	float:left;
+}
+
+.symc2 #vipMessageBox.error #vipMessageContent,.symc2 #vipMessageBox.success #vipMessageContent{
+	padding: 2px 10% 2px 40px;
+	font-size: 12px;
+
+}
+
+.symc2 #vipDialogContent {
+	font-size: 90%;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	outline: none;
+
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+.symc2 #vipDialogContent #vipOoblink {
+	text-decoration: none;
+	color: #366bb2;
+}
+
+.symc2 #vipDialogContent #vipContent {
+	padding-top: 20px;
+	padding-right: 10%;
+	padding-bottom: 15px;
+	padding-left: 10%;
+	margin: 0px;
+}
+
+.symc2 #vipDialogContent form label {
+	display: block;
+	margin: 20px 0px 20px 0px;
+	width:auto;
+	font-size: 12px;
+}
+
+.symc2 #vipDialogContent #vipOobOptions .radioOpt{
+	font-size: 15px;
+}
+
+.symc2 #vipDialogContent h3 {
+	margin: 0;
+	font-weight:bold;
+	text-align: center;
+}
+
+.symc2 #vipDialogContent #vipEnterSecurityCode input[type="email"]{
+	width: 300px;
+	height: 60px;
+	font-size: 20px;
+	color: #451EE3;
+	letter-spacing: 0px;
+	margin-top: 0px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+	margin-right: 25px;
+	border: 0;
+	outline: 0;
+	background: transparent;
+	border-bottom: 1px solid #cccccc;
+}
+
+.symc2 #vipDialogContent input[type="password"]{
+	width: 300px;
+	height: 30px;
+	font-size: 15px;
+	margin-top: 38px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+	margin-right: 25px;
+	border: 0;
+	outline: 0;
+	background: transparent;
+	border-bottom: 1px solid #cccccc;
+
+}
+
+.symc2 #vipDialogContent #vipEnterSecurityCode input[type="text"]{
+	width: 300px;
+	height: 60px;
+	font-size: 30px;
+	letter-spacing: 20px;
+	margin-top: 0px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+	margin-right: 25px;
+	border: 0;
+	outline: 0;
+	background: transparent;
+	border-bottom: 1px solid #cccccc;
+}
+
+.symc2 #vipDialogContent #vipEnterDeviceName,
+.symc2 #vipDialogContent #vipConfirmDeviceName {
+	display: flex;
+	display: -ms-flexbox;
+	flex-direction: column;
+	-ms-flex-direction: column;
+	min-height: 300px;
+}
+.symc2 #vipDialogContent #vipEnterDeviceName input[type="text"] {
+	width: 300px;
+	height: 40px;
+	margin-top: 10px;
+	margin-bottom: 15px;
+	margin-left: 0px;
+	margin-right: 25px;
+	border: 0;
+	outline: 0;
+	background: transparent;
+	border-bottom: 1px solid #cccccc;
+	font-size: 20px;
+}
+
+.symc2 #vipDialogContent #vipConfirmFriendlyName {
+	background: #f9f9f9;
+	border-top: 1px solid #e0e0e1;
+	border-bottom: 1px solid #e0e0e1;
+	font-weight: bold;
+	padding: 22px;
+	text-align: center;
+	font-size: 18px;
+}
+
+.symc2 #vipDialogContent input::-webkit-input-placeholder {
+	color: #cccccc;
+}
+
+.symc2 #vipDialogContent input::-moz-placeholder {
+	color: #cccccc;
+}
+
+.symc2 #vipDialogContent input:-ms-input-placeholder {
+	color: #cccccc;
+}
+
+.symc2 #vipDialogContent .remembernote {
+	font-size: 15px;
+}
+
+.symc2 #vipDialogContent #rememberDeviceLabel {
+	font-size: 15px;
+	margin-left: -3px;
+}
+
+.labelDisabled{
+	color:#808080;
+}
+
+.symc2 #vipDialogContent .remembernotereachedmax {
+	font-size: 0.9em;
+	margin-left: 1.5em;
+	font-style: italic;
+	margin-left:0px;
+}
+
+.symc2 #vipDialogContent .btn{
+	display: inline-block;
+	*display: inline;
+	padding: 4px 8px;
+	margin-bottom: 0;
+	margin-right: 5px;
+	*margin-left: .3em;
+	font-size: 14px;
+	line-height: 20px;
+	*line-height: 20px;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	*border: 0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	*zoom: 1;
+}
+
+.symc2 #vipDialogContent #vipSspFrameContainer p{
+	padding:0px;
+	margin:0px;
+}
+
+.symc2 #vipSymfooter #vipSymcPower{
+	background: url(../images/symantec-logo-powerby.png) no-repeat center;
+	height: 31px;
+}
+
+.symc2 #vipSymfooter #vipPoweredBy {
+	margin-left: 25%;
+}
+
+.symc2 #vipDialogContent #vipEnablesymc2 {
+}
+
+.symc2 #vipDialogContent #vipCobranding {
+	display: block;
+	height: 30px;
+}
+
+.symc2 #vipMobilePushubtitle{
+	font-size: 1.2em;
+	margin-bottom: 1.4em;
+}
+
+.symc2 #vipPushToDiv{
+	padding-bottom: 5px;
+	background-color: #f5f5f5;
+	width:100%;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius:2px;
+}
+
+.symc2 #vipPushNotes{
+	font-size: 1.3em;
+	margin-top: 1.3em;
+}
+
+.symc2 #skipMobileLink{
+	 text-decoration: none;
+	 font-size: 15px;
+	 text-align: center;
+}
+
+.symc2 .vipMoCredLeft{
+	width:120px;
+	font-weight:bold;
+	float:left;
+	display: inline-block;
+}
+
+.symc2 .vipMoCredRight{
+	display: inline-block;
+	float: right;
+}
+
+.symc2 .vipMoNameCenter{
+	text-align: center;
+	font-size: 30px;
+	padding-bottom: 10px;
+}
+
+.symc2 .vipMoCredCenter{
+	text-align: center;
+	font-size: 15px;
+}
+
+.symc2 #vipMobileInstruction {
+	padding-top: 30px;
+	padding-bottom: 20px;
+	text-align: center;
+}
+
+.symc2 #vipMobilePushDiv #vipMobileNotice {
+	padding-bottom: 20px;
+	text-align: center;
+}
+
+.progressBar {
+	height: 16px;
+	background-color: #FFFFFF;
+	padding:1px !important;
+}
+
+.progressBar div {
+	height: 100%;
+	text-align: right;
+	width: 0px;
+	background-color: #FFC43F;
+}
+
+#vipSymWaitDiv{
+	padding-bottom:5px;
+}
+
+#vipSymCompleteDiv{
+	padding-bottom:5px;
+}
+
+#progressBarContent{
+	text-align:center;
+	padding-bottom:15px;
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width: 568px)
+and (orientation: portrait) {
+
+}
+
+.symc2 #vipInstallStepPanel {
+	display: flex;
+	display: -ms-flexbox;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	padding: 10px;
+}
+
+.symc2 .stepImage {
+	float: left;
+}
+
+.symc2 img.stepImage {
+	float: left;
+	margin: 10px;
+}
+
+.symc2 .stepText {
+	float: left;
+}
+
+.symc2 #vipExtensionStepDiv, .symc2 #vipPluginStepDiv {
+	display: flex;
+	display: -ms-flexbox;
+	align-items: center;
+	padding: 5px;
+	/* With flex, this ends up making it use up as much space as it can */
+	width: 100%;
+	/* Force a height because the panels end up at different heights which is unpleasant */
+	height: 50px;
+	margin: 2px;
+	border-top: 1px solid #e0e0e1;
+	border-bottom: 1px solid #e0e0e1;
+}
+
+.symc2 #vipInstallStepPanel .pending {
+}
+
+.symc2 #vipInstallStepPanel .complete {
+	background: #F9F9F9 url('../images/success-icon.png') no-repeat right 3px top 3px;
+}
+
+.symc2 .vipUpgradeCompleteDialogSpacing {
+	padding-top: 60px;
+}
+
+.symc2 .ieFlexWrapper {
+	display: -ms-flexbox;
+	-ms-flex-direction: column;
+}
+
+.symc2 #vipDialogContent #vipContent.vipFlexContent {
+	display: flex;
+	flex-direction: column;
+	display: -ms-flexbox;
+	-ms-flex-direction: column;
+	min-height: 380px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
